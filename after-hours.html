@@ -152,7 +152,7 @@ h2.display{font-size:clamp(34px,4.4vw,60px);line-height:1.02}
 .drawer .drawer-foot{margin-top:auto;padding-top:24px;color:var(--grey);font-size:13px}
 
 /* ---------- Hero ---------- */
-.hero{position:relative;height:clamp(560px,86vh,860px);color:var(--bone);display:flex;align-items:flex-end;overflow:hidden}
+.hero{position:relative;height:clamp(490px,75vh,748px);color:var(--bone);display:flex;align-items:flex-end;overflow:hidden}
 .hero .ph{position:absolute;inset:0;z-index:0;transform:scale(1.06);transition:transform 1.8s var(--ease-out)}
 .hero.is-in .ph{transform:scale(1)}
 .hero .ph::before{background:var(--ph-bg)}
@@ -255,20 +255,20 @@ h2.display{font-size:clamp(34px,4.4vw,60px);line-height:1.02}
 /* ---------- Shop by Texture (formerly "Materials") — plain white section, no banner image behind the
    header (explicit client direction: this is an L3 product-discovery layer, not a hero-style lead-in),
    boxed tab bar with a solid active segment, and product cards instead of subcategory tiles ---------- */
-.material-filter{position:relative;background:var(--licorice);color:var(--bone);padding:clamp(17px,2.15vw,25px) 0 clamp(17px,2.15vw,25px)}
+.material-filter{position:relative;background:var(--licorice);color:var(--bone);padding:clamp(14px,1.7vw,20px) 0 clamp(14px,1.7vw,20px)}
 .mf-head{width:100%;text-align:center;max-width:1020px;margin:0 auto}
 .mf-head .eyebrow{color:var(--caramel)}
-.mf-head h2{margin-top:8px;font-size:clamp(22px,2.6vw,34px);line-height:1.05;color:var(--bone);white-space:nowrap}
-.mf-sub{margin:8px auto 0;max-width:52ch;color:rgba(217,210,191,.72);font-size:13px;line-height:1.4}
+.mf-head h2{margin-top:6px;font-size:clamp(22px,2.6vw,34px);line-height:1.05;color:var(--bone);white-space:nowrap}
+.mf-sub{margin:6px auto 0;max-width:52ch;color:rgba(217,210,191,.72);font-size:13px;line-height:1.4}
 /* .tabs (base rule) sets flex-wrap:wrap and comes later in the cascade than a single-class .mf-tabs
    selector would, silently overriding nowrap — the two-class selector here wins on specificity so the
    tab bar reliably stays a single row instead of wrapping into an uneven, gap-leaving second line. */
-.tabs.mf-tabs{justify-content:flex-start;flex-wrap:nowrap;gap:0;margin:var(--space-md) auto 0;width:100%;max-width:100%;border:1px solid var(--line-dark);overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.tabs.mf-tabs{justify-content:flex-start;flex-wrap:nowrap;gap:0;margin:clamp(14px,1.8vw,22px) auto 0;width:100%;max-width:100%;border:1px solid var(--line-dark);overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
 .mf-tabs::-webkit-scrollbar{display:none}
-.mf-tabs .tab{flex:1 1 0;min-width:122px;background:none;border:0;border-right:1px solid var(--line-dark);padding:14px 25px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--bone);white-space:nowrap;transition:background var(--t-fast),color var(--t-fast)}
+.mf-tabs .tab{flex:1 1 0;min-width:122px;background:none;border:0;border-right:1px solid var(--line-dark);padding:11px 25px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--bone);white-space:nowrap;transition:background var(--t-fast),color var(--t-fast)}
 .mf-tabs .tab:last-child{border-right:0}
 .mf-tabs .tab[aria-selected="true"]{background:var(--caramel);color:#fff}
-.mf-row-wrap{position:relative;z-index:3;margin-top:clamp(16px,2vw,22px);margin-left:auto;margin-right:auto}
+.mf-row-wrap{position:relative;z-index:3;margin-top:clamp(10px,1.2vw,14px);margin-left:auto;margin-right:auto}
 /* max-width caps each row to a fixed number of cards' worth of width so the carousel
    ALWAYS shows a partial next card at the trailing edge on wide screens, instead of
    leaving it to chance whether the section's full available width happens to fit an
@@ -276,15 +276,15 @@ h2.display{font-size:clamp(34px,4.4vw,60px);line-height:1.02}
    flagged explicitly: "product cards at 100% zoom should be 5th card half visible, i
    still don't see that change"). Below this width the row simply fills 100% and the
    peek still shows naturally since content still exceeds the container. */
-#materials-filter .mf-row-wrap{max-width:calc(4.5 * clamp(180px,20vw,220px) + 4 * var(--space-sm))}
+#materials-filter .mf-row-wrap{max-width:calc(4.5 * clamp(160px,18vw,195px) + 4 * var(--space-sm))}
 .grp-content .mf-row-wrap{max-width:calc(3.5 * clamp(190px,22vw,230px) + 3 * var(--space-sm))}
 .mf-row{display:flex;gap:var(--space-sm);overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:6px}
 .mf-row.is-few{justify-content:center}
 .mf-row::-webkit-scrollbar{display:none}
-.mf-row .product-card{flex:0 0 clamp(180px,20vw,220px)}
+.mf-row .product-card{flex:0 0 clamp(160px,18vw,195px)}
 .mf-row .product-card[hidden]{display:none}
 /* Branded scroll progress — replaces the native scrollbar with something that matches the page */
-.mf-scrollbar{position:relative;height:3px;max-width:200px;margin:20px auto 0;background:var(--line-dark);border-radius:999px;overflow:hidden}
+.mf-scrollbar{position:relative;height:3px;max-width:200px;margin:14px auto 0;background:var(--line-dark);border-radius:999px;overflow:hidden}
 .mf-scrollbar-thumb{position:absolute;top:0;left:0;height:100%;width:40%;background:var(--caramel);border-radius:999px;transform:translateX(0);transition:transform .12s linear}
 /* Desktop-only prev/next arrows for the product row, reusing the site's .car-nav button language.
    Centered on the card height specifically (row-wrap also includes the scrollbar strip below the
@@ -296,7 +296,7 @@ h2.display{font-size:clamp(34px,4.4vw,60px);line-height:1.02}
 .mf-nav.prev{left:-8px;transform:translate(-100%,-50%)}
 .mf-nav.next{right:-8px;transform:translate(100%,-50%)}
 @media (max-width:1100px){.mf-nav{display:none}}
-.mf-foot{display:flex;justify-content:center;margin-top:clamp(14px,1.8vw,20px)}
+.mf-foot{display:flex;justify-content:center;margin-top:clamp(10px,1.4vw,16px)}
 .mf-foot .link-arrow.pill{padding:15px 28px;border:1px solid var(--line-dark);border-radius:999px;color:var(--bone)}
 .mf-foot .link-arrow.pill::after{content:none}
 .mf-foot .link-arrow.pill:hover{background:var(--caramel);border-color:var(--caramel);color:#fff}
@@ -362,7 +362,7 @@ h2.display{font-size:clamp(34px,4.4vw,60px);line-height:1.02}
    `.85fr 1.15fr` split on desktop, reset to a single column on mobile. *Reason: explicit "in
    desktop for these sections - hosting and bar and leather accessories - lets bring back the
    desktop banner which used to be there earlier only on desktop please."* */
-.cs-grid{display:grid;grid-template-columns:.85fr 1.15fr;margin:clamp(40px,5vw,64px) 0}
+.cs-grid{display:grid;grid-template-columns:.85fr 1.15fr;margin:clamp(28px,3.2vw,36px) 0}
 .cs-visual{position:relative;overflow:hidden;min-height:clamp(160px,19.6vw,250px)}
 .cs-visual .ph{position:absolute;inset:0}
 /* Mobile-only hero banner, a separate element from the desktop .cs-visual — see its own
@@ -388,7 +388,7 @@ h2.display{font-size:clamp(34px,4.4vw,60px);line-height:1.02}
    reported as "too close" between the heading block and the group circles specifically. Spacing
    is deliberate per-transition now via margin-top on `.cs-groups` (a clear break from the heading
    block) and `.grp-content` (a smaller, closer step down to the carousel) — see those rules. */
-.cs-panel{padding:var(--space-md) var(--gutter);display:flex;flex-direction:column;justify-content:center;min-width:0}
+.cs-panel{padding:clamp(14px,1.6vw,20px) var(--gutter);display:flex;flex-direction:column;justify-content:center;min-width:0}
 .category-split.on-colored .cs-panel{background:var(--deep);color:var(--bone)}
 .category-split.on-colored .cs-sub{color:rgba(217,210,191,.72)}
 .category-split.on-colored .link-arrow{color:var(--bone)}
@@ -406,7 +406,7 @@ h2.display{font-size:clamp(34px,4.4vw,60px);line-height:1.02}
    grid below switches to that group). Replaces the old sub-grid/sub-tile navigation-tile pattern. No
    separate heading/description block under the circles — the active circle's own bold label is the
    only "which group am I looking at" indicator, so the group name isn't shown twice. */
-.cs-groups{display:flex;flex-wrap:nowrap;border:1px solid var(--line);width:100%;margin-top:clamp(24px,3vw,36px)}
+.cs-groups{display:flex;flex-wrap:nowrap;border:1px solid var(--line);width:100%;margin-top:clamp(16px,2vw,22px)}
 .grp-btn{flex:1 1 0;min-width:0;background:none;border:0;border-right:1px solid var(--line);padding:14px 18px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--grey);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer;transition:background var(--t-fast),color var(--t-fast)}
 .grp-btn:last-child{border-right:0}
 .grp-label{display:block}
@@ -423,7 +423,7 @@ h2.display{font-size:clamp(34px,4.4vw,60px);line-height:1.02}
    you ever reintroduce a uniform `gap` on `.cs-panel`/`.cs-glass-content`, remove this margin
    again first — the double-gap bug this comment used to describe is a real risk if both exist
    at once. */
-.grp-content{margin-top:clamp(16px,2vw,22px)}
+.grp-content{margin-top:clamp(10px,1.2vw,13px)}
 /* .grp-row carries no layout rules of its own — it always appears combined with .mf-row
    (".mf-row grp-row"), which supplies the single-row horizontal-carousel layout, sizing,
    and [hidden] handling identically to Shop by Texture. See the carousel guideline in
@@ -564,11 +564,11 @@ h2.display{font-size:clamp(34px,4.4vw,60px);line-height:1.02}
    explicit ask. */
 
 /* ---------- Recommended for you (product rail, between Leather Accessories and FAQ) ---------- */
-.recommended{background:#fff;padding:var(--sec-pad) 0}
-.recommended .head{max-width:640px;margin-bottom:clamp(28px,3vw,40px)}
+.recommended{background:#fff;padding:clamp(40px,5vw,72px) 0}
+.recommended .head{max-width:640px;margin-bottom:clamp(20px,2.2vw,28px)}
 .recommended .head .eyebrow{color:var(--caramel)}
-.recommended h2{margin-top:8px;font-size:clamp(28px,3.2vw,44px);line-height:1.05;color:var(--ink)}
-.recommended .sub{margin-top:10px;color:var(--grey);font-size:14px;max-width:48ch}
+.recommended h2{margin-top:6px;font-size:clamp(28px,3.2vw,44px);line-height:1.05;color:var(--ink)}
+.recommended .sub{margin-top:8px;color:var(--grey);font-size:14px;max-width:48ch}
 /* Unlike Shop by Texture/the category-split carousels, this row-wrap is NOT capped to a fixed
    card-multiple width — it spans the same left/right edges as the heading above it (full width of
    .wrap, no auto-centering margin), per explicit "product card start from where our title starts
@@ -582,13 +582,13 @@ h2.display{font-size:clamp(34px,4.4vw,60px);line-height:1.02}
 #recommended .product-card .quick .btn-ghost{border-color:var(--line)}
 
 /* ---------- FAQ ---------- */
-.faq{background:#fff;padding:var(--sec-pad) 0}
+.faq{background:#fff;padding:clamp(40px,5vw,72px) 0}
 .faq-head{max-width:640px;margin:0 auto;text-align:center}
 .faq-head h2{font-size:clamp(28px,3.2vw,44px);line-height:1.08;margin-top:8px}
 .faq-head p{color:var(--grey);margin-top:12px;font-size:14px;line-height:1.5}
-.faq-list{max-width:760px;margin:clamp(28px,3vw,44px) auto 0;border-top:1px solid var(--line)}
+.faq-list{max-width:760px;margin:clamp(20px,2.2vw,32px) auto 0;border-top:1px solid var(--line)}
 .faq-item{border-bottom:1px solid var(--line)}
-.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:clamp(18px,2vw,24px) 4px;background:none;border:0;text-align:left;font-family:var(--font-display);font-size:clamp(16px,1.6vw,19px);font-weight:400;color:var(--ink);cursor:pointer}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:clamp(14px,1.6vw,18px) 4px;background:none;border:0;text-align:left;font-family:var(--font-display);font-size:clamp(16px,1.6vw,19px);font-weight:400;color:var(--ink);cursor:pointer}
 .faq-q svg{flex:none;width:16px;height:16px;stroke:var(--ink-soft);fill:none;stroke-width:1.6;transition:transform .25s}
 .faq-q[aria-expanded="true"] svg{transform:rotate(180deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
