@@ -2081,6 +2081,12 @@ footer .dd-menu button:hover{background:rgba(217,210,191,.06)}
     if (next) next.addEventListener('click', () => row.scrollBy({ left: step(), behavior: 'smooth' }));
     row.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update);
+    // The cards themselves fade/slide in via the .reveal system (opacity/translateY, staggered
+    // per card) AFTER this initial update() already ran — so on first load, before any card has
+    // finished revealing, positionNavs() measures a card still offset by transform:translateY,
+    // landing the arrows a little high. Re-running once each card's reveal transition finishes
+    // corrects it without waiting for a click/scroll/resize to trigger update() again.
+    row.addEventListener('transitionend', e => { if (e.target.closest('.product-card')) positionNavs(); });
     update();
     return { row, update };
   }
